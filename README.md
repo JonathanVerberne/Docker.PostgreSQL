@@ -20,7 +20,7 @@ Step 3 - Optional (Clean up)
   $ docker-compose down
 
 # Back Up / Restore Instructions
-## Back Up
+### Back Up
   Here is the command need to run to back up the PostgreSQL database.
     $ docker exec -u <your_postgres_user> <postgres_container_name> pg_dump -Fc <database_name_here> > db.dump
   Example
@@ -28,7 +28,9 @@ Step 3 - Optional (Clean up)
 
 ## Restore Database
 You will need to drop the existing database first, and then restore it.
+
   $ docker exec lcs-db-container psql -U postgres -d postgres -c "DROP DATABASE loyalty_db WITH (FORCE);"
   
 Restore database from back up.
+
   $ docker exec -i -u postgres motogp-postgres-container pg_restore -C -d postgres < /Docker/db_backups/motogp_db_backup.sql
