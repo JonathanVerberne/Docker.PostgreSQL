@@ -22,8 +22,8 @@ Note: Must have admin rights when running command prompt and you must be in the 
 # Back Up / Restore Instructions
 ### Back Up
   Here is the command need to run to back up the PostgreSQL database.\
-    $ docker exec -u <your_postgres_user> <postgres_container_name> pg_dump -Fc <database_name_here> > db.dump
-  Example
+    $ docker exec -u <your_postgres_user> <postgres_container_name> pg_dump -Fc <database_name_here> > db.dump\
+  Example\
     docker exec -u postgres motogp-postgres-container pg_dump -Fc motogp_db > /Docker/db_backups/motogp_db_backup.sql
 
 ### Restore Database
