@@ -31,7 +31,7 @@ Note: Must have admin rights when running command prompt and you must be in the 
   ```
   Example
   ```yaml
-    docker exec -u postgres motogp-postgres-container pg_dump -Fc motogp_db > /Docker/db_backups/motogp_db_backup.sql
+    $ docker exec -u postgres motogp-postgres-container pg_dump -Fc motogp_db > /Docker/db_backups/motogp_db_backup.sql
   ```
   
 ### Restore Database
