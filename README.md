@@ -10,7 +10,7 @@ Note: Must have admin rights when running command prompt and you must be in the 
 
 ### Step 1 - Run docker compose file
 ```yaml
-  $ docker-compose up -d
+$ docker-compose up -d
 ```
   
 ### Step 2 - Connect to the newly created database using DBeaver
@@ -27,21 +27,21 @@ Note: Must have admin rights when running command prompt and you must be in the 
 ### Back Up
   Here is the command need to run to back up the PostgreSQL database.
   ```yaml
-    $ docker exec -u <your_postgres_user> <postgres_container_name> pg_dump -Fc <database_name_here> > db.dump
+  $ docker exec -u <your_postgres_user> <postgres_container_name> pg_dump -Fc <database_name_here> > db.dump
   ```
   Example
   ```yaml
-    $ docker exec -u postgres motogp-postgres-container pg_dump -Fc motogp_db > /Docker/db_backups/motogp_db_backup.sql
+  $ docker exec -u postgres motogp-postgres-container pg_dump -Fc motogp_db > /Docker/db_backups/motogp_db_backup.sql
   ```
   
 ### Restore Database
 You will need to drop the existing database first, and then restore it.
 ```yaml
-  $ docker exec lcs-db-container psql -U postgres -d postgres -c "DROP DATABASE loyalty_db WITH (FORCE);"
+$ docker exec lcs-db-container psql -U postgres -d postgres -c "DROP DATABASE loyalty_db WITH (FORCE);"
 ```
 
 Restore database from back up.
 ```yaml
-  $ docker exec -i -u postgres motogp-postgres-container pg_restore -C -d postgres < /Docker/db_backups/motogp_db_backup.sql
+$ docker exec -i -u postgres motogp-postgres-container pg_restore -C -d postgres < /Docker/db_backups/motogp_db_backup.sql
 ```
 
