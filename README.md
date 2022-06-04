@@ -18,29 +18,29 @@ Note: Must have admin rights when running command prompt and you must be in the 
 ![image](https://user-images.githubusercontent.com/56781613/171974506-ecb6a7a0-67df-4529-a2df-a0ad9497156d.png)
 
 ### Step 3 - Optional (Clean up)
-  When you have finished with the container, you can remove it by runnign the following command\
+  When you have finished with the container, you can remove it by runnign the following command
   ```yaml
   $ docker-compose down
   ```
   
 # Back Up / Restore Instructions
 ### Back Up
-  Here is the command need to run to back up the PostgreSQL database.\
+  Here is the command need to run to back up the PostgreSQL database.
   ```yaml
     $ docker exec -u <your_postgres_user> <postgres_container_name> pg_dump -Fc <database_name_here> > db.dump\
   ```
-  Example\
+  Example
   ```yaml
     docker exec -u postgres motogp-postgres-container pg_dump -Fc motogp_db > /Docker/db_backups/motogp_db_backup.sql
   ```
   
 ### Restore Database
-You will need to drop the existing database first, and then restore it.\
+You will need to drop the existing database first, and then restore it.
 ```yaml
   $ docker exec lcs-db-container psql -U postgres -d postgres -c "DROP DATABASE loyalty_db WITH (FORCE);"
 ```
 
-Restore database from back up.\
+Restore database from back up.
 ```yaml
   $ docker exec -i -u postgres motogp-postgres-container pg_restore -C -d postgres < /Docker/db_backups/motogp_db_backup.sql
 ```
