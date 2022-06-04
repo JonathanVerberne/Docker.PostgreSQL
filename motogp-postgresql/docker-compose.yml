@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  motogp_database:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=motogp_db
+    ports:
+      - '5555:5432'
+    volumes:
+      - /var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    container_name: motogp-postgres-container
