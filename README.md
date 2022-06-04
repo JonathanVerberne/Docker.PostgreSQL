@@ -1,8 +1,8 @@
 # Docker.PostgreSQL
 Creates a demo postgresql database in a docker container through a docker-compose file.
 
-#Prerequisites
-Note: You must have docker installed on your local machine. Follow steps here;
+# Prerequisites
+Note: You must have docker installed on your local machine. Follow steps here;__
   Get Docker - https://docs.docker.com/get-docker/
 
 # Run & Connect
