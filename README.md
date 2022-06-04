@@ -9,6 +9,7 @@ Note: You must have docker installed on your local machine. Follow steps here;\
 Note: Must have admin rights when running command prompt and you must be in the directory where the docker-compose.yml is located.
 
 ### Step 1 - Run docker compose file
+This will run the docker-compose.yml file. More on docker compose can be found at https://docs.docker.com/compose/.
 ```yaml
 $ docker-compose up -d
 ```
