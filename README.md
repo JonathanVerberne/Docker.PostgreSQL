@@ -8,7 +8,7 @@ Note: You must have docker installed on your local machine. Follow steps here;\
 # Run & Connect
 Note: Must have admin rights when running command prompt and you must be in the directory where the docker-compose.yml is located.
 
-### Step 1 - Run docker compose file\
+### Step 1 - Run docker compose file
   $ docker-compose up -d
   
 ### Step 2 - Connect to the newly created database using DBeaver
@@ -21,16 +21,14 @@ Note: Must have admin rights when running command prompt and you must be in the 
 
 # Back Up / Restore Instructions
 ### Back Up
-  Here is the command need to run to back up the PostgreSQL database.
+  Here is the command need to run to back up the PostgreSQL database.\
     $ docker exec -u <your_postgres_user> <postgres_container_name> pg_dump -Fc <database_name_here> > db.dump
   Example
     docker exec -u postgres motogp-postgres-container pg_dump -Fc motogp_db > /Docker/db_backups/motogp_db_backup.sql
 
 ### Restore Database
-You will need to drop the existing database first, and then restore it.
-
+You will need to drop the existing database first, and then restore it.\
   $ docker exec lcs-db-container psql -U postgres -d postgres -c "DROP DATABASE loyalty_db WITH (FORCE);"
   
-Restore database from back up.
-
+Restore database from back up.\
   $ docker exec -i -u postgres motogp-postgres-container pg_restore -C -d postgres < /Docker/db_backups/motogp_db_backup.sql
