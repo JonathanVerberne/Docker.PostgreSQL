@@ -27,7 +27,7 @@ Note: Must have admin rights when running command prompt and you must be in the 
 ### Back Up
   Here is the command need to run to back up the PostgreSQL database.
   ```yaml
-    $ docker exec -u <your_postgres_user> <postgres_container_name> pg_dump -Fc <database_name_here> > db.dump\
+    $ docker exec -u <your_postgres_user> <postgres_container_name> pg_dump -Fc <database_name_here> > db.dump
   ```
   Example
   ```yaml
